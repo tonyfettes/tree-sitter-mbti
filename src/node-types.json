@@ -251,6 +251,33 @@
     }
   },
   {
+    "type": "default_impl_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "function_identifier",
+          "named": true
+        },
+        {
+          "type": "type_parameters",
+          "named": true
+        },
+        {
+          "type": "visibility",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "default_value",
     "named": true,
     "fields": {}
@@ -449,6 +476,25 @@
     }
   },
   {
+    "type": "function_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lowercase_identifier",
+          "named": true
+        },
+        {
+          "type": "type_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_labeled_parameter",
     "named": true,
     "fields": {},
@@ -571,7 +617,7 @@
     }
   },
   {
-    "type": "impl_declaration",
+    "type": "impl_for_type_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -850,6 +896,10 @@
           "named": true
         },
         {
+          "type": "default_impl_declaration",
+          "named": true
+        },
+        {
           "type": "enum_declaration",
           "named": true
         },
@@ -866,7 +916,7 @@
           "named": true
         },
         {
-          "type": "impl_declaration",
+          "type": "impl_for_type_declaration",
           "named": true
         },
         {
@@ -1566,6 +1616,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
     "named": false
   },
   {

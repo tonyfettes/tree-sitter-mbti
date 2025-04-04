@@ -53,7 +53,8 @@ module.exports = grammar({
       $.function_declaration,
       $.function_alias_declaration,
       $.method_declarations,
-      $.impl_declaration,
+      $.impl_for_type_declaration,
+      $.default_impl_declaration,
       $.value_declaration,
       $.const_declaration,
       $.type_declaration,
@@ -331,16 +332,27 @@ module.exports = grammar({
       '}',
     ),
 
-    impl_declaration: $ => seq(
+    impl_for_type_declaration: $ => seq(
       optional($.attributes),
       optional($.visibility),
       'impl',
       optional($.type_parameters),
       $.type_name,
-      optional(seq(
-        'for',
-        $.type,
-      )),
+      'for',
+      $.type,
+    ),
+
+    function_identifier: $ => choice(
+      $.lowercase_identifier,
+      seq($.type_name, '::', $.lowercase_identifier),
+    ),
+
+    default_impl_declaration: $ => seq(
+      optional($.attributes),
+      optional($.visibility),
+      'impl',
+      $.function_identifier,
+      optional($.type_parameters),
     ),
 
     type_declaration: $ => seq(

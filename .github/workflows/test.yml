@@ -1,0 +1,88 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+          cache: "npm"
+
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+        with:
+          tree-sitter-ref: v0.25.3
+
+      - name: Generate tree-sitter parser
+        run: tree-sitter generate
+
+      - name: Run tests
+        uses: tree-sitter/parser-test-action@v2
+        with:
+          test-rust: true
+          test-node: true
+          test-python: true
+          test-go: true
+          test-swift: true
+
+  test-core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+          cache: "npm"
+
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+        with:
+          tree-sitter-ref: v0.25.3
+
+      - name: Generate tree-sitter parser
+        run: tree-sitter generate
+
+      - name: Checkout moonbitlang/core
+        run: git clone https://github.com/moonbitlang/core.git
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test core
+        id: core
+        uses: tree-sitter/parse-action@v4
+        with:
+          files: core/**/*.mbti
+
+      - name: Upload failures
+        uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.core.outputs.failures != '' }}
+        with:
+          name: failures
+          path: ${{steps.core.outputs.failures}}

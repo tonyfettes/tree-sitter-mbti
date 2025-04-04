@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: build
+        run: npm run generate
+
+      - name: Commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -a -m "build: bump artifacts [skip ci]"
+            git push origin HEAD:main
+          fi

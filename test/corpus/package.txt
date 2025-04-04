@@ -7,4 +7,6 @@ package "moonbitlang/core/test"
 (signature
   (signature_item
     (package_declaration
-      (string_literal))))
+      (string_literal
+        (string_fragment
+          (unescaped_string_fragment))))))

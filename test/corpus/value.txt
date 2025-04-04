@@ -1,0 +1,45 @@
+================================================================================
+value declaration
+================================================================================
+let x : Int
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (value_declaration
+      (lowercase_identifier)
+      (type_annotation
+        (type
+          (qualified_type_identifier
+            (identifier
+              (uppercase_identifier))))))))
+
+================================================================================
+const declaration
+================================================================================
+const ANSWER : Int = 42
+const PI : Double = 0x3.243F6A8885A308CA8A54
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (const_declaration
+      (uppercase_identifier)
+      (type_annotation
+        (type
+          (qualified_type_identifier
+            (identifier
+              (uppercase_identifier)))))
+      (literal
+        (integer_literal))))
+  (semicolon)
+  (signature_item
+    (const_declaration
+      (uppercase_identifier)
+      (type_annotation
+        (type
+          (qualified_type_identifier
+            (identifier
+              (uppercase_identifier)))))
+      (literal
+        (float_literal)))))

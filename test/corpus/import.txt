@@ -9,5 +9,7 @@ import(
 (signature
   (signature_item
     (import_declaration
-      (string_literal)
+      (string_literal
+        (string_fragment
+          (unescaped_string_fragment)))
       (semicolon))))

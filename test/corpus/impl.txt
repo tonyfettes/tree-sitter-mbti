@@ -7,7 +7,7 @@ impl Show for JsonDecodeError
 
 (signature
   (signature_item
-    (impl_declaration
+    (impl_for_type_declaration
       (type_name
         (qualified_type_identifier
           (identifier
@@ -18,7 +18,7 @@ impl Show for JsonDecodeError
             (uppercase_identifier))))))
   (semicolon)
   (signature_item
-    (impl_declaration
+    (impl_for_type_declaration
       (type_name
         (qualified_type_identifier
           (identifier

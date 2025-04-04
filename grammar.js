@@ -37,7 +37,7 @@ const TYPE_PREC = {
 };
 
 module.exports = grammar({
-  name: "mbti",
+  name: 'mbti',
 
   extras: $ => [
     $.comment,
@@ -119,7 +119,7 @@ module.exports = grammar({
         seq(
           '(',
           list($.semicolon, $.string_literal),
-          ')'
+          ')',
         ),
       ),
     ),
@@ -260,7 +260,7 @@ module.exports = grammar({
     function_parameter_option_type: $ => prec(TYPE_PREC.option, seq($.lowercase_identifier, '?')),
 
     function_parameter_type: $ => choice(
-      alias($.function_parameter_option_type, $.option_type)
+      alias($.function_parameter_option_type, $.option_type),
     ),
 
     function_parameter: $ => choice(
@@ -416,14 +416,14 @@ module.exports = grammar({
 
     constructor_positional_parameter: $ => seq(
       optional($.mutability),
-      $.type
+      $.type,
     ),
 
     constructor_labeled_parameter: $ => seq(
       optional($.mutability),
       $.lowercase_identifier,
       '~',
-      $.type_annotation
+      $.type_annotation,
     ),
 
     constructor_parameter: $ => choice(
@@ -520,5 +520,5 @@ module.exports = grammar({
       'traitalias',
       $.trait_alias_targets,
     ),
-  }
+  },
 });

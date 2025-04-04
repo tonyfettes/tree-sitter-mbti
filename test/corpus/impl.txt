@@ -1,5 +1,5 @@
 ================================================================================
-impl declaration
+impl for declaration
 ================================================================================
 impl Eq for JsonDecodeError
 impl Show for JsonDecodeError
@@ -27,3 +27,29 @@ impl Show for JsonDecodeError
         (qualified_type_identifier
           (identifier
             (uppercase_identifier)))))))
+
+================================================================================
+default impl declaration
+================================================================================
+impl Eq::op_equal
+impl Show::to_string
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (default_impl_declaration
+      (function_identifier
+        (type_name
+          (qualified_type_identifier
+            (identifier
+              (uppercase_identifier))))
+        (lowercase_identifier))))
+  (semicolon)
+  (signature_item
+    (default_impl_declaration
+      (function_identifier
+        (type_name
+          (qualified_type_identifier
+            (identifier
+              (uppercase_identifier))))
+        (lowercase_identifier)))))

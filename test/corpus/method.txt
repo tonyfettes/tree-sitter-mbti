@@ -1,0 +1,54 @@
+================================================================================
+method declaration
+================================================================================
+impl JsonPath {
+  add_index(Self, Int) -> Self
+  add_key(Self, String) -> Self
+}
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (method_declarations
+      (type_name
+        (qualified_type_identifier
+          (identifier
+            (uppercase_identifier))))
+      (method_declaration
+        (lowercase_identifier)
+        (function_parameters
+          (function_parameter
+            (type
+              (qualified_type_identifier
+                (identifier
+                  (uppercase_identifier)))))
+          (function_parameter
+            (type
+              (qualified_type_identifier
+                (identifier
+                  (uppercase_identifier))))))
+        (return_type
+          (type
+            (qualified_type_identifier
+              (identifier
+                (uppercase_identifier))))))
+      (semicolon)
+      (method_declaration
+        (lowercase_identifier)
+        (function_parameters
+          (function_parameter
+            (type
+              (qualified_type_identifier
+                (identifier
+                  (uppercase_identifier)))))
+          (function_parameter
+            (type
+              (qualified_type_identifier
+                (identifier
+                  (uppercase_identifier))))))
+        (return_type
+          (type
+            (qualified_type_identifier
+              (identifier
+                (uppercase_identifier))))))
+      (semicolon))))

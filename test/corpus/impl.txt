@@ -1,0 +1,29 @@
+================================================================================
+impl declaration
+================================================================================
+impl Eq for JsonDecodeError
+impl Show for JsonDecodeError
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (impl_declaration
+      (type_name
+        (qualified_type_identifier
+          (identifier
+            (uppercase_identifier))))
+      (type
+        (qualified_type_identifier
+          (identifier
+            (uppercase_identifier))))))
+  (semicolon)
+  (signature_item
+    (impl_declaration
+      (type_name
+        (qualified_type_identifier
+          (identifier
+            (uppercase_identifier))))
+      (type
+        (qualified_type_identifier
+          (identifier
+            (uppercase_identifier)))))))

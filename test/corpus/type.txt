@@ -1,0 +1,23 @@
+================================================================================
+error type declaration
+================================================================================
+pub(all) type! JsonDecodeError (JsonPath, String)
+--------------------------------------------------------------------------------
+
+(signature
+  (signature_item
+    (error_type_declaration
+      (visibility
+        (pub_attribute))
+      (identifier
+        (uppercase_identifier))
+      (type
+        (tuple_type
+          (type
+            (qualified_type_identifier
+              (identifier
+                (uppercase_identifier))))
+          (type
+            (qualified_type_identifier
+              (identifier
+                (uppercase_identifier)))))))))

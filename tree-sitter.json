@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "mbti",
+      "camelcase": "Mbti",
+      "title": "MoonBit Interface",
+      "scope": "source.mbti",
+      "file-types": [
+        "mbti"
+      ],
+      "injection-regex": "^mbti$",
+      "class-name": "TreeSitterMbti"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for MoonBit Interface",
+    "authors": [
+      {
+        "name": "Haoxiang Fei",
+        "email": "feihaoxiang@idea.edu.cn",
+        "url": "https://github.com/tonyfettes"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/moonbitlang/tree-sitter-mbti"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

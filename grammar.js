@@ -54,6 +54,8 @@ module.exports = grammar({
       $.function_alias_declaration,
       $.method_declarations,
       $.impl_declaration,
+      $.value_declaration,
+      $.const_declaration,
       $.type_declaration,
       $.struct_declaration,
       $.enum_declaration,

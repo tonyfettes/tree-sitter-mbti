@@ -110,6 +110,33 @@
     }
   },
   {
+    "type": "const_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "type_annotation",
+          "named": true
+        },
+        {
+          "type": "uppercase_identifier",
+          "named": true
+        },
+        {
+          "type": "visibility",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "constructor",
     "named": true,
     "fields": {},
@@ -819,6 +846,10 @@
       "required": true,
       "types": [
         {
+          "type": "const_declaration",
+          "named": true
+        },
+        {
           "type": "enum_declaration",
           "named": true
         },
@@ -868,6 +899,10 @@
         },
         {
           "type": "type_declaration",
+          "named": true
+        },
+        {
+          "type": "value_declaration",
           "named": true
         }
       ]
@@ -1440,6 +1475,33 @@
     }
   },
   {
+    "type": "value_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "lowercase_identifier",
+          "named": true
+        },
+        {
+          "type": "type_annotation",
+          "named": true
+        },
+        {
+          "type": "visibility",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "visibility",
     "named": true,
     "fields": {},
@@ -1548,6 +1610,10 @@
     "extra": true
   },
   {
+    "type": "const",
+    "named": false
+  },
+  {
     "type": "dot_lowercase_identifier",
     "named": true
   },
@@ -1586,6 +1652,10 @@
   {
     "type": "integer_literal",
     "named": true
+  },
+  {
+    "type": "let",
+    "named": false
   },
   {
     "type": "lowercase_identifier",
